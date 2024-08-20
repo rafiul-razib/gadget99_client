@@ -1,0 +1,105 @@
+{
+    "headphones": [
+      {
+        "id": 1,
+        "name": "SoundWave Pro",
+        "image": "soundwave_pro.jpg",
+        "description": "High-fidelity wireless headphones with noise cancellation and 30-hour battery life.",
+        "price": 149.99,
+        "category": "headphone",
+        "ratings": 4.8,
+        "creation_date": "2024-01-15"
+      },
+      {
+        "id": 2,
+        "name": "BassBoost Max",
+        "image": "bassboost_max.jpg",
+        "description": "Over-ear headphones with enhanced bass and immersive sound experience.",
+        "price": 99.99,
+        "category": "headphone",
+        "ratings": 4.5,
+        "creation_date": "2024-02-20"
+      },
+      {
+        "id": 3,
+        "name": "QuietComfort 500",
+        "image": "quietcomfort_500.jpg",
+        "description": "Top-tier noise-canceling headphones with superior comfort for long listening sessions.",
+        "price": 299.99,
+        "category": "headphone",
+        "ratings": 4.9,
+        "creation_date": "2024-03-05"
+      },
+      {
+        "id": 4,
+        "name": "SportBuds X2",
+        "image": "sportbuds_x2.jpg",
+        "description": "Sweat-resistant, wireless earbuds designed for high-intensity workouts.",
+        "price": 79.99,
+        "category": "headphone",
+        "ratings": 4.3,
+        "creation_date": "2024-04-10"
+      },
+      {
+        "id": 5,
+        "name": "StudioMaster 900",
+        "image": "studiomaster_900.jpg",
+        "description": "Professional studio headphones with crystal-clear sound and ergonomic design.",
+        "price": 199.99,
+        "category": "headphone",
+        "ratings": 4.7,
+        "creation_date": "2024-01-28"
+      },
+      {
+        "id": 6,
+        "name": "TravelEase 300",
+        "image": "travelease_300.jpg",
+        "description": "Compact, foldable headphones with active noise cancellation, perfect for travelers.",
+        "price": 129.99,
+        "category": "headphone",
+        "ratings": 4.6,
+        "creation_date": "2024-03-18"
+      },
+      {
+        "id": 7,
+        "name": "UrbanBeat 400",
+        "image": "urbanbeat_400.jpg",
+        "description": "Stylish, on-ear headphones with vibrant sound and durable build for urban lifestyles.",
+        "price": 89.99,
+        "category": "headphone",
+        "ratings": 4.4,
+        "creation_date": "2024-02-11"
+      },
+      {
+        "id": 8,
+        "name": "LuxSound Elite",
+        "image": "luxsound_elite.jpg",
+        "description": "Premium headphones with a luxurious design and unmatched audio quality.",
+        "price": 349.99,
+        "category": "headphone",
+        "ratings": 4.9,
+        "creation_date": "2024-04-02"
+      },
+      {
+        "id": 9,
+        "name": "GamingPro 700",
+        "image": "gamingpro_700.jpg",
+        "description": "High-performance gaming headphones with surround sound and built-in mic.",
+        "price": 129.99,
+        "category": "headphone",
+        "ratings": 4.7,
+        "creation_date": "2024-03-22"
+      },
+      {
+        "id": 10,
+        "name": "ClassicTune 100",
+        "image": "classictune_100.jpg",
+        "description": "Retro-style headphones with rich sound and timeless design.",
+        "price": 69.99,
+        "category": "headphone",
+        "ratings": 4.2,
+        "creation_date": "2024-01-07"
+      }
+    ]
+  }
+  
