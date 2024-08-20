@@ -4,20 +4,22 @@ import { useLoaderData } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
-  const [productPerPage, setProductPerPage] = useState(10);
+  const [productPerPage, setProductPerPage] = useState(6);
   const [currentPage, setCurrentPage] = useState(0);
+  const [searchedItem, setSearchedItem] = useState("");
+
   useEffect(() => {
     fetch(
-      `http://localhost:3000/allProducts?page=${currentPage}&size=${productPerPage}`
+      `http://localhost:3000/allProducts?page=${currentPage}&size=${productPerPage}&search=${searchedItem}`
     )
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
       });
-  }, [currentPage, productPerPage]);
+  }, [currentPage, productPerPage, searchedItem]);
 
   const productCount = useLoaderData();
-  console.log(productCount);
+  // console.log(searchedItem);
 
   const numberOfPages = Math.ceil(productCount.count / productPerPage);
 
@@ -42,7 +44,13 @@ const Products = () => {
     }
   };
 
-  console.log(pages);
+  // console.log(pages);
+
+  const handleSearch = () => {
+    const searchField = document.getElementById("searchField");
+    const searchText = searchField.value;
+    setSearchedItem(searchText);
+  };
   return (
     <div>
       <div className="text-center max-w-4xl mx-auto my-14">
@@ -55,6 +63,22 @@ const Products = () => {
           commodi ab fugit officia! Nulla nesciunt delectus quae. Molestias
           laborum quae nesciunt earum at?
         </p>
+      </div>
+      <div className="text-center mx-auto">
+        <div className="join">
+          <input
+            type="text"
+            id="searchField"
+            placeholder="Search"
+            className="input input-bordered w-full rounded-l-full max-w-xs mb-4 join-item"
+          />
+          <button
+            onClick={handleSearch}
+            className="btn join-item rounded-r-full"
+          >
+            Search
+          </button>
+        </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {products.map((item) => (
@@ -82,10 +106,10 @@ const Products = () => {
             Next
           </button>
           <select onChange={handleSetProductPerPage}>
-            <option>5</option>
-            <option>10</option>
-            <option>20</option>
-            <option>50</option>
+            <option>6</option>
+            <option>12</option>
+            <option>18</option>
+            <option>36</option>
           </select>
         </div>
       </div>
