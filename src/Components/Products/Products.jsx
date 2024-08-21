@@ -141,7 +141,7 @@ const Products = () => {
             <button
               className={`${
                 currentPage === page && "selected btn-accent"
-              } btn btn-sm btn-primary mx-1`}
+              } btn btn-sm btn-primary m-1`}
               onClick={() => setCurrentPage(page)}
               key={page}
             >
@@ -151,7 +151,14 @@ const Products = () => {
           <button className="btn btn-sm btn-primary" onClick={handleNextPage}>
             Next
           </button>
-          <select onChange={handleSetProductPerPage}>
+          <label className="ml-2" htmlFor="content">
+            Content/Page :
+          </label>
+          <select
+            id="content"
+            className="ml-1"
+            onChange={handleSetProductPerPage}
+          >
             <option>6</option>
             <option>12</option>
             <option>18</option>
