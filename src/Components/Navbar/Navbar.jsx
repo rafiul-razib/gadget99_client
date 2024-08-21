@@ -57,7 +57,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="flex justify-start items-center">
-          <div className="w-1/12">
+          <div className="w-1/12 mx-2">
             <img src={logo} alt="" />
           </div>
           <span className="text-3xl font-bold">Gears99</span>
