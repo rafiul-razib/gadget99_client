@@ -15,7 +15,7 @@ const Products = () => {
 
   useEffect(() => {
     fetch(
-      `http://localhost:3000/allProducts?page=${currentPage}&size=${productPerPage}&search=${searchedItem}&priceSorted=${
+      `http://gadget99-server.vercel.app/allProducts?page=${currentPage}&size=${productPerPage}&search=${searchedItem}&priceSorted=${
         ascending ? "asc" : "des"
       }&dateSorted=${sortByDate ? "dateAdded" : "notSorted"}`
     )
