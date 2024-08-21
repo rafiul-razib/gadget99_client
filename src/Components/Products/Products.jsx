@@ -10,8 +10,8 @@ const Products = () => {
   const [ascending, setAscending] = useState(true);
   const [sortByDate, setSortByDate] = useState(true);
 
-  console.log(ascending);
-  console.log(sortByDate);
+  // console.log(ascending);
+  // console.log(sortByDate);
 
   useEffect(() => {
     fetch(
@@ -126,7 +126,7 @@ const Products = () => {
           </select>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {products.map((item) => (
           <Product item={item} />
         ))}
@@ -134,21 +134,21 @@ const Products = () => {
       <div className="my-12 text-center mx-auto">
         <div className="page">
           {/* <div>Current Page = {currentPage}</div> */}
-          <button className="btn btn-primary" onClick={handlePrevPage}>
+          <button className="btn btn-sm btn-primary" onClick={handlePrevPage}>
             Prev
           </button>
           {pages.map((page) => (
             <button
               className={`${
                 currentPage === page && "selected btn-accent"
-              } btn btn-primary mx-1`}
+              } btn btn-sm btn-primary mx-1`}
               onClick={() => setCurrentPage(page)}
               key={page}
             >
               {page}
             </button>
           ))}
-          <button className="btn btn-primary" onClick={handleNextPage}>
+          <button className="btn btn-sm btn-primary" onClick={handleNextPage}>
             Next
           </button>
           <select onChange={handleSetProductPerPage}>
