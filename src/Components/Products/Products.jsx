@@ -7,16 +7,23 @@ const Products = () => {
   const [productPerPage, setProductPerPage] = useState(6);
   const [currentPage, setCurrentPage] = useState(0);
   const [searchedItem, setSearchedItem] = useState("");
+  const [ascending, setAscending] = useState(true);
+  const [sortByDate, setSortByDate] = useState(true);
+
+  console.log(ascending);
+  console.log(sortByDate);
 
   useEffect(() => {
     fetch(
-      `http://localhost:3000/allProducts?page=${currentPage}&size=${productPerPage}&search=${searchedItem}`
+      `http://localhost:3000/allProducts?page=${currentPage}&size=${productPerPage}&search=${searchedItem}&priceSorted=${
+        ascending ? "asc" : "des"
+      }&dateSorted=${sortByDate ? "dateAdded" : "notSorted"}`
     )
       .then((res) => res.json())
       .then((data) => {
         setProducts(data);
       });
-  }, [currentPage, productPerPage, searchedItem]);
+  }, [currentPage, productPerPage, searchedItem, ascending, sortByDate]);
 
   const productCount = useLoaderData();
   // console.log(searchedItem);
@@ -44,6 +51,19 @@ const Products = () => {
     }
   };
 
+  const handleSort = (e) => {
+    const sortParameter = e.target.value;
+    if (sortParameter === "Price: High to Low") {
+      setAscending(false);
+    } else if (sortParameter === "Price: Low to High") {
+      setAscending(true);
+    } else if (sortParameter === "Date Added") {
+      setSortByDate(false);
+    } else {
+      return;
+    }
+  };
+
   // console.log(pages);
 
   const handleSearch = () => {
@@ -64,7 +84,20 @@ const Products = () => {
           laborum quae nesciunt earum at?
         </p>
       </div>
-      <div className="text-center mx-auto">
+      <div className="flex justify-around">
+        <div>
+          <select
+            className="select select-bordered w-full max-w-xs rounded-full"
+            onChange={handleSort}
+          >
+            <option disabled selected>
+              Sort
+            </option>
+            <option>Price: High to Low</option>
+            <option>Price: Low to High</option>
+            <option>Date Added</option>
+          </select>
+        </div>
         <div className="join">
           <input
             type="text"
@@ -78,6 +111,19 @@ const Products = () => {
           >
             Search
           </button>
+        </div>
+        <div>
+          <select
+            className="select select-bordered w-full max-w-xs rounded-full"
+            onChange={handleSort}
+          >
+            <option disabled selected value="filter">
+              Filter
+            </option>
+            <option value="brandName">Brand Name</option>
+            <option value="category">Category Name</option>
+            <option value="priceRange">Price Range</option>
+          </select>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
