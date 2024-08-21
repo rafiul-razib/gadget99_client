@@ -4,8 +4,7 @@ import Products from "../../Components/Products/Products";
 
 const Home = () => {
   return (
-    <div className="max-w-6xl mx-auto">
-      <Navbar />
+    <div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="col-span-2">
           <Banner />
